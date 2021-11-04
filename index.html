@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Self</title>
+      <style>
+       @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+          html {
+            height:100%;
+            background-image: linear-gradient(to right top, #8e44ad 0%, #3498db 100%);
+            background-attachment: fixed;
+          }
+
+          nav {
+            max-width: 960px;
+            mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
+            margin: 0 auto;
+            padding: 30px 0;
+          }
+
+          nav ul {
+           text-align: center;
+          background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+          box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+          }
+
+          nav ul li {
+            display: inline-block;
+         }
+
+          nav ul li a {
+            padding: 18px;
+            font-family: "Open Sans";
+            text-transform:uppercase;
+            color: rgba(0, 35, 122, 0.5);
+            font-size: 18px;
+            text-decoration: none;
+            display: block;
+          }
+
+          nav ul li a:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(0, 35, 122, 0.7);
+          }
+
+          .container {
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+            overflow: hidden;
+          }
+
+          #navMenu {
+            top: 260px;
+            left: 800px;
+            width: 325px;
+            height: 325px;
+            z-index: 100;
+            background: linear-gradient(90deg, #910EC9, #d350db, #910EC9);
+            -webkit-background: linear-gradient(90deg, #910EC9, #d350db, #910EC9);
+            background-size: 400% 400%;
+            -webkit-background-size: 400% 400%;
+            animation: gradient 5s infinite;
+            -webkit-animation: gradient 5s infinite;
+          }
+
+          #navMenu:hover, .nav:hover {
+            background: #d350db;
+          }
+
+
+          .diamond {
+            position: absolute;
+            width: 300.5px;
+            height: 300.5px;
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            background-image: #910EC9;
+            margin: 10px;
+            cursor: pointer;
+            box-shadow: 1px 4px 10px #101010;
+          }
+
+          .diamond:active {
+            background: #710b9e;
+            box-shadow: 0px 1px 2.5px #101010;
+            transition: 0.1s;
+            -webkit-transition: 0.1s;
+          }
+
+
+          .nav {
+            transition: 0.5s;
+            -webkit-transition: 0.5s;
+          }
+          .small {
+            top: 186px;
+            left: 236px;
+            z-index: 50;
+            background: #643fc1;
+            transition: 0.5s;
+            -webkit-transition: 0.5s;
+          }
+
+          .rotCorrect {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            margin-left: 14px;
+            margin-top: 8px;
+          }
+
+          #mainRotCorrect {
+            margin-left: 26px;
+            margin-top: 28px;
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            max-width: 90px;
+          }
+
+          i {
+            color: #EEEEEE;
+          }
+
+          img.background {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          left: 0px;
+          top: 0px;
+          z-index: -1;
+        }
+
+      </style>
+
+      <script type="text/javascript">
+        
+      </script>
+       
+    </head>
+
+  <body>
+     <nav>
+  <ul>
+    <li>
+      <a href="Index.html">Home</a>
+    </li>
+    <li>
+      <a href="About.html">about </a>
+    </li>
+    <li>
+      <a href="Recommendation.html">Extra</a>
+    </li>
+  </ul>
+</nav>
+     
+    <div class="container">
+       <h1 style = "font-family:Simple script; font-size: 90px; margin-left: 200px; margin-top:22px; line-height:70px;  color: #FFFFFF;"> "El unico limite<br>  es tu mente."</h1>
+       <p style="font-family: Open Sans; font-size: 30px; margin-left: 200px; margin-right:500px; margin-top:10px; line-height:27px;  color: #FFFFFF;">
+        Esta soy yo, Gabriela, hoy te voy a mostrar un poco de mi.<br>
+
+        Una vez alguien me dijo que soy como una orquídea morada, e investigando se dice que simboliza prudencia y sabiduria, considero que son dos palabras que me pueden describir.
+       </p>
+      <div id="navMenu" class="diamond">
+      <img class="background" src="../Self/Imagenes/Foto1.jpg" alt="Pineapple" width="300" height="300">
+    <div id="mainRotCorrect" class="rotCorrect"><i class="fa fa-cubes fa-4x" aria-hidden="true"></i></div>
+    </div>
+    </div>
+
+</footer>
+  </body>
+</html>
