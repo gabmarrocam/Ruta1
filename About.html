@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Self</title>
+      <script type="text/javascript">
+        $(document).ready(function() {
+         $("#navMenu").click(function() {
+        if ($(".nav").hasClass("small")) {
+          $(".nav").removeClass("small");
+        } else {
+         $(".nav").addClass("small");
+       }
+      });
+    });
+      </script>
+      <style>
+       @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+          html {
+            height:100%;
+            background-image: linear-gradient(to right top, #8e44ad 0%, #3498db 100%);
+            background-attachment: fixed;
+          }
+
+          nav {
+            max-width: 960px;
+            mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
+            margin: 0 auto;
+            padding: 30px 0;
+          }
+
+          nav ul {
+           text-align: center;
+          background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+          box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+          }
+
+          nav ul li {
+            display: inline-block;
+         }
+
+          nav ul li a {
+            padding: 10px;
+            font-family: "Open Sans";
+            text-transform:uppercase;
+            color: rgba(0, 35, 122, 0.5);
+            font-size: 19px;
+            text-decoration: none;
+            display: block;
+          }
+
+          nav ul li a:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(0, 35, 122, 0.7);
+          }
+
+          .container {
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+            overflow: hidden;
+          }
+
+          #navMenu {
+            top: 50px;
+            left: 150px;
+            width: 325px;
+            height: 325px;
+            z-index: 100;
+            background: linear-gradient(90deg, #910EC9, #d350db, #910EC9);
+            -webkit-background: linear-gradient(90deg, #910EC9, #d350db, #910EC9);
+            background-size: 400% 400%;
+            -webkit-background-size: 400% 400%;
+            animation: gradient 5s infinite;
+            -webkit-animation: gradient 5s infinite;
+          }
+
+          #navMenu:hover, .nav:hover {
+            background: #d350db;
+          }
+
+        @keyframes gradient {
+           50% {
+              background-position: 100% 0;
+          }
+          }
+        @-webkit-keyframes gradient {
+           50% {
+               background-position: 100% 0;
+          }
+          }
+
+          .diamond {
+            position: absolute;
+            width: 260.5px;
+            height: 260.5px;
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            background:#910EC9;
+            margin-left: 20px;
+            margin-top: 130px;
+            cursor: pointer;
+            box-shadow: 1px 4px 10px #101010;
+
+          }
+
+          .diamond:active {
+            background: #710b9e;
+            box-shadow: 0px 1px 2.5px #101010;
+            transition: 0.1s;
+            -webkit-transition: 0.1s;
+          }
+
+
+          .nav {
+            transition: 0.5s;
+            -webkit-transition: 0.5s;
+          }
+
+          .nav1 {
+            top: 160px;
+            left: 600px;
+            margin-left: 20px;
+            margin-top: 140px;
+            width: 110px;
+            height: 110px;
+          }
+
+          .nav2 {
+            top: 160px;
+            left: 780px;
+            margin-left: 20px;
+            margin-top: 140px;
+            width: 110px;
+            height: 110px;
+          }
+
+          .nav3 {
+            top: 160px;
+            left: 960px;
+            margin-left: 20px;
+            margin-right: : 280px;
+            margin-top: 140px;
+            width: 110px;
+            height: 110px;
+          }
+
+
+          .small {
+            top: 186px;
+            left: 226px;
+            z-index: 50;
+            background: #643fc1;
+            transition: 0.5s;
+            -webkit-transition: 0.5s;
+          }
+
+          .rotCorrect {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            margin-left: 14px;
+            margin-top: 8px;
+          }
+
+          #mainRotCorrect {
+            margin-left: 26px;
+            margin-top: 28px;
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            max-width: 90px;
+          }
+
+          i {
+            color: #EEEEEE;
+            text-align: center;
+            font-family: "Open Sans";
+            text-transform:uppercase;
+          }
+
+          img.background {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          left: 0px;
+          top: 0px;
+          z-index: -1;
+        }
+
+          .Todo{
+            display: flex;
+            width: 70%;
+            height: 100vh;
+            padding: 2% 0%;
+            box-sizing: border-box;
+            margin-left:250px; 
+            margin-top: 70px;
+          }
+
+          /*Tamaño de todo*/
+          .box{
+            flex: 1;
+            overflow: hidden;
+            margin: 10px;
+            line-height: 0;
+            box-shadow: 0 20px 30px rgba(155, 155, 155, 0.568);
+            transition: all 2s
+          }
+
+          .box{
+            flex: 1;
+            overflow: hidden;
+            margin: 8px;
+            line-height: 0;
+            box-shadow: 0 20px 30px rgba(155, 155, 155, 0.568);
+            transition: all 2s;
+          }
+
+/*Tamaño de imagenes*/
+        .box > img {
+           width: 110%;
+           height: calc(80% - 0vh);
+           object-fit: cover;
+           transition: all 2s;
+           align-content: left;
+          }
+
+    button{
+  margin:0;
+  align-items:center;
+  font-family:Open Sans;
+}
+
+a{
+  text-decoration:none;
+  color:#ffffff;
+}
+.rainbow-button {
+  width:calc(10vw + 3px);
+  height:calc(4vw + 2px);
+  background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+  border-radius:5px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-transform:uppercase;
+  font-size:2vw;
+}
+.rainbow-button:after {
+  content:attr(alt);
+  width:9.5vw;
+  height:3.5vw;
+  background-color:#191919;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.rainbow-button:hover {
+  animation:slidebg 2s linear infinite;
+}
+
+@keyframes slidebg {
+  to {
+    background-position:10vw;
+  }
+}
+        .foto3{
+        width: 350px;
+        height: 350px;
+  
+        }
+
+
+        table {
+          width: 100%;
+        }
+
+        .columna{
+          width: 30%;
+        }
+
+        .footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   height: 7%;
+   width: 100%;
+   background-color: #154360;
+   color: white;
+   text-align: center;
+   font-family: Open Sans;
+
+}
+      </style>
+      <script>
+
+
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function myFunction2() {
+  var x = document.getElementById("myDIV2");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function myFunction3() {
+    var x = document.getElementById("myDIV3");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+
+
+</script>
+    </head>
+
+  <body>
+     <nav>
+  <ul>
+    <li>
+      <a href="Index.html">Home</a>
+    </li>
+    <li>
+      <a href="About.html">about </a>
+    </li>
+    <li>
+      <a href="Recommendation.html">Extra</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="container">
+    <div id="myDIV0">
+    <div id="navMenu" class="diamond">
+      <img class="background" src="../Self/Imagenes/Foto3.jpg" alt="Pineapple" width="300" height="300">
+    <div id="mainRotCorrect" class="rotCorrect"><i class="fa fa-cubes fa-4x" aria-hidden="true"></i></div>
+    </div>
+    <div>
+      <p style="font-family: Open Sans; font-size: 25px; margin-left: 500px; margin-right: 10px; line-height:23px;  color: #FFFFFF; align-content: left; margin-top:40px"> 
+        Una de las pasiones mas grandes de Gabriela, es la lectura, asi como tambien disfrutar de ver dramas coreanos, y pasar tiempo con su familia y amigos.
+       </p>
+    </div>
+   </div>
+    <div id="nav1" class="nav nav1 diamond" type="button" id="mybutton" id="cuadro1" value="Mi Boton" onclick="myFunction() ; myFunction0()">
+      <div class="rotCorrect"><i class="fa fa-home fa-2x" aria-hidden="true">Libros</i></div>
+    </div>
+    <!--<div class="popUp">Home</div>-->
+    <div id="nav2" class="nav nav2 diamond" type="button" id="mybutton" id="cuadro2" value="Mi Boton" onclick="myFunction2(); myFunction0()">
+      <div class="rotCorrect"><i class="fa fa-file-text-o fa-2x" aria-hidden="true">Series</i></div>
+    </div>
+    <div id="nav3" class="nav nav3 diamond" type="button" id="mybutton" id="cuadro3" value="Mi Boton" onclick="myFunction3(); myFunction0()">
+      <div class="rotCorrect"><i class="fa fa-calendar fa-2x" aria-hidden="true">informacion<br>general</i></div>
+    </div>
+    </div>
+  </div>
+
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+
+    <table id="myDIV" style="display: none;">
+  <tr>
+    <th>
+      <p style="font-family: Open Sans; font-size: 20px; margin-left: 200px; margin-right:200px;line-height:20px;  color: #FFFFFF; align-content: left "> 
+        Una de las pasiones mas grandes de Gabriela, es la lectura, aqui te comparte sus favoritos del 2021.
+
+       </p>
+      <h2 style = "font-family:Simple script; font-size: 40px; margin-left: 100px;line-height:20
+      px;  color: #FFFFFF;"> "Libros favoritos:"</h2>
+    <div class="Todo">
+     <div class="box"> 
+        <img src="../Self/Imagenes/Portada2.jpg" ><br>
+        <p style = "font-family:open Sans; font-size: 15px; color: #FFFFFF;">Una corte de rosas y espinas.</p>
+        <button> <a  href="https://drive.google.com/file/d/1RlD9TsOglhk6sX0bqh0qE5h0hHZ1MlTg/view?usp=sharing" class="rainbow-button" alt="Leer">  </a></button>
+     </div>
+     <div class="box">
+        <img src="../Self/Imagenes/Portada3.jpg">
+        <p style = "font-family:open Sans; font-size: 15px; color: #FFFFFF;">El principe cruel.</p>
+        <button> <a href="https://drive.google.com/file/d/1Rq0HETimM0yCJvqxOH3waEgVvdYlYJzD/view?usp=sharing" class="rainbow-button" alt="Leer"></a></button> 
+      </div>
+      <div class="box"> 
+        <img src="../Self/Imagenes/Portada4.jpg" ><br>
+        <p style = "font-family:open Sans; font-size: 15px; color: #FFFFFF;">Fangirl.</p>
+        <button> <a href="https://drive.google.com/file/d/1RdG_G4t1Us0x__MZXJDMYyrH2poa-ULa/view?usp=sharing"class="rainbow-button" alt="Leer"></a></button>
+      </div>
+   </div> 
+  </th>
+</tr>
+  <br> 
+<tr>
+  <th>
+      <h2 style = "font-family:Simple script; font-size: 40px; margin-left: 10px; line-height:70px;  color: #FFFFFF;"> "Libros weds favoritos:"</h2>
+    <div class="Todo">
+      <div class="box">
+        <img src="../Self/Imagenes/Portada6.jpg">
+        <p style = "font-family:open Sans; font-size: 15px; color: #FFFFFF;">De una fuga y otros desastres.</p>
+        <button> <a href="https://www.wattpad.com/story/203102779?utm_source=android&utm_medium=link&utm_content=story_info&wp_page=story_details_button&wp_uname=gabmarrocam&wp_originator=Fs2%2FOAbUHAXVT4IkkZEgtHoCtq6CVrn3%2BSIljmZv90BLgeQIqF%2BcclMaJoRP%2FBQQw2h4gDzLG9aarPoa9KZgbr9XFff5hqP2DMYY%2BgyNATmwWKxWBH9fGUOAXjwoeaP6
+" class="rainbow-button" alt="Leer"></a></button>    
+      </div>
+      <div class="box"> 
+        <img src="../Self/Imagenes/Portada7.jpg" ><br>
+        <p style = "font-family:open Sans; font-size: 15px; color: #FFFFFF;">Lord Olympus.</p>
+        <button> <a href="https://www.webtoons.com/en/romance/lore-olympus/list?title_no=1320" class="rainbow-button" alt="Leer"></a></button>
+      </div>
+      <div class="box">
+        <img src="../Self/Imagenes/Portada8.jpg">
+        <p style = "font-family:open Sans; font-size: 15px; color: #FFFFFF;">The remarried empress.</p>
+        <button> <a href="https://www.webtoons.com/en/fantasy/the-remarried-empress/list?title_no=2135
+" class="rainbow-button" alt="Leer"></a></button>    
+      </div>
+    </div> 
+  </th>
+ </tr>
+</table>
+
+<table id="myDIV2" style="display: none; top: 300px;">
+  <tr>
+    <th>
+      <h2 style = "font-family:Simple script; font-size: 40px; line-height:70px;  color: #FFFFFF;"> "Dramas favoritos:"</h2>
+      <a style = "font-family:arial ; font-size: 20px; line-height:70px;  color: #FFFFFF;"> Nota: No suelo ver muchas series, pero si muchos dramas coreanos. </a>
+  <div class="Todo">
+    <div class="box"> 
+        <img src="../Self/Imagenes/Drama1.jpg" ><br>
+        <p style = "font-family:open Sans; font-size: 15px; color: #FFFFFF;">Ella era bonita.</p>
+        <button> <a href="https://www.viki.com/tv/28448c-she-was-pretty"class="rainbow-button" alt="Ver"></a></button>
+    </div>
+    <div class="box">
+        <img src="../Self/Imagenes/Drama2.jpg">
+        <p style = "font-family:open Sans; font-size: 15px; color: #FFFFFF;">La luna abraza al sol.</p>
+        <button> <a href="https://www.viki.com/tv/2130c-la-luna-abrazando-el-sol?locale=es"class="rainbow-button" alt="Ver"></a></button> 
+      </div>
+    <div class="box"> 
+        <img src="../Self/Imagenes/Drama3.jpg" ><br>
+        <p style = "font-family:open Sans; font-size: 15px; color: #FFFFFF;">Goblin.</p>
+        <button> <a href="https://www.viki.com/tv/31706c-guardian-the-lonely-and-great-god"class="rainbow-button" alt="Ver"></a></button>
+    </div>
+  </div> 
+  </th>
+  </tr>
+  <br> 
+<tr>
+    <th>
+  <div class="Todo">
+    <div class="box">
+        <img src="../Self/Imagenes/Drama4.jpg">
+        <p style = "font-family:open Sans; font-size: 15px; color: #FFFFFF;">Vincenzo.</p>
+        <button> <a href="https://www.netflix.com/sv/title/81365087?source=35" class="rainbow-button" alt="Ver"></a></button>    
+      </div>
+         <div class="box"> 
+        <img src="../Self/Imagenes/Drama5.jpg" ><br>
+        <p style = "font-family:open Sans; font-size: 15px; color: #FFFFFF;">True Beauty.</p>
+        <button> <a href="https://www.viki.com/tv/37374c-true-beauty" class="rainbow-button" alt="Ver"></a></button>
+    </div>
+    <div class="box">
+        <img src="../Self/Imagenes/Drama6.jpg">
+        <p style = "font-family:open Sans; font-size: 15px; color: #FFFFFF;">Doom at your service.</p>
+        <button> <a href="https://www.viki.com/tv/37776c-doom-at-your-service" class="rainbow-button" alt="Ver"></a></button>    
+      </div>
+  </div> 
+  </th>
+  </tr>
+</table>
+
+
+<table id="myDIV3" style="display: none; top: 300px;">
+  <tr>
+    <th>
+  <p style="font-family: Open Sans; font-size: 35px; margin-left: 500px; margin-right: 10px; line-height:35px;  color: #FFFFFF; align-content: center; margin-top:40px"> 
+    Informacion General
+    </p>
+  </th>
+  <tr>
+  <tr>
+    <th class="columna">
+      <div>
+       <h1 style = "font-family:Simple script; font-size: 30px; margin-left: 0px; margin-top:10px; margin-right: 50px; line-height:70px;  color: #FFFFFF; background-color:#D7BDE2 "> Datos personales:</h1>
+       <p style="font-family: Open Sans; font-size: 18px; text-shadow: left; margin-left: 100px; margin-top:10px; margin-right:50px; line-height:18px;  color: #FFFFFF; text-align: left">
+        <strong>Nombre:</strong><br>
+        Gabriela Nohemi MarroquinCampos.<br>
+        <strong>Dirección de Correo:</strong><br>
+        gabriela.marroquin2021@adoc.superate.org.sv<br>
+        <strong>Fecha y lugar de nacimiento:</strong><br>
+        29 de junio de2004, Hospital primero de mayo del segurosocial.<br>
+        <strong>Estado civil:<br>
+        Soltera<br>
+       </p>
+       
+       <h1 style = "font-family:Simple script; font-size: 30px; margin-left: 0px; margin-top:10px; margin-right: 50px;line-height:70px;  color: #FFFFFF; background-color:#D7BDE2 "> Habilidades:</h1>
+       <p style="font-family: Open Sans; font-size: 18px; text-shadow: left; margin-left: 100px; margin-top:10px; margin-right:50px; line-height:18px;  color: #FFFFFF; text-align: left">
+        -Creatividad<br>
+        -El manejo de personas<br>
+        -Escucha activa<br>
+       </p>
+       <h1 style = "font-family:Simple script; font-size: 30px; margin-left: 0px; margin-top:10px; margin-right:50px; line-height:70px;  color: #FFFFFF; background-color:#D7BDE2 "> Experiencia profesinal:</h1>
+       <p style="font-family: Open Sans; font-size: 18px; text-shadow: left; margin-left: 100px; margin-right: 50px; margin-top:10px; line-height:18px;  color: #FFFFFF; text-align: left">
+        No remunerada:<br>
+        -Voluntariado con el fin de reconstrucción del templo delcantón veracruz.<br>
+        -Voluntariado a hogar de ancianos San Vicente de Paúl.<br>
+       </p>
+      </div>
+    </th>
+    <th>
+      <div>
+       <h1 style = "font-family:Simple script; font-size: 30px; margin-left: 0px; margin-top:22px; line-height:70px;  color: #FFFFFF; background-color:#D7BDE2 " > Estudios complementarios</h1>
+       <p style="font-family: Open Sans; font-size: 18px; text-shadow: left; margin-left: 10px; margin-right: 10px; margin-top:10px; line-height:18px;  color: #FFFFFF; text-align: left">
+        Centro ¡supérate! ADOC<br>
+        -Diplomado en ingles, informática y habilidades para la vida. |Enero 2019 - Noviembre 2021.<br>
+       </p>
+       <h1 style = "font-family:Simple script; font-size: 30px; margin-left: 0px; margin-top:22px; margin-right: 10px; line-height:70px;  color: #FFFFFF; background-color:#D7BDE2 "> Idiomas:</h1>
+       <p style="font-family: Open Sans; font-size: 18px; text-shadow: left; margin-left: 10px; margin-top:10px; margin-right: 10px; line-height:18px;  color: #FFFFFF; text-align: left">
+        -Ingles<br>
+        Centro ¡supérate! ADOC | Enero 2019 - Noviembre 2021.<br>
+        Nivel de dominio: Intermedio-Avanzado.<br>
+        -TOEIC Bridge |2019<br>
+        - MOCK TOEIC | 2020<br>
+       </p>
+       <h1 style = "font-family:Simple script; font-size: 30px; margin-left: 0px; margin-top:22px; line-height:70px;  color: #FFFFFF; background-color:#D7BDE2 "> Informartica:</h1>
+       <p style="font-family: Open Sans; font-size: 18px; text-shadow: left; margin-left: 10px; margin-top:10px; line-height:18px;  color: #FFFFFF; text-align: left">
+        -Certificación de microsoft Excel<br>
+        -Conocimientos de ofimática ( Procesadores de texto, hojasde calculo, Internet etc)<br>
+        -Especialista en Javascript.<br>
+       </p>
+
+      </div>
+    </th>
+  </tr>
+</table>
+<br><br><br>
+
+<footer class="footer">
+  <table>
+    <tr>
+      <th>
+        <div>
+          <a href="Index.html">Home</a>
+        </div>
+      </th>
+      <th>
+        <div>
+          <a href="About.html">About</a>
+        </div>
+      </th>
+      <th>
+        <div>
+          <a href="Recommendation.html">Extra</a>
+        </div>
+      </th>
+      <th>
+        <div>
+          <a href="https://drive.google.com/file/d/1SAeErsmqOiB9V_h0dkfDBEZAxpF8YWP3/view?usp=sharing">Curriculum vitae</a>
+        </div>
+      </th>
+    </tr>
+  </table>
+
+</footer>
+
+  </body>
+</html>
